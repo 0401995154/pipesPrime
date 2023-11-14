@@ -1,10 +1,14 @@
+
 import { SharedModule } from './shared/shared.module';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ButtonModule } from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+
+//Configuracion local
+import  '@angular/common/locales/global/es' ; 
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,8 +17,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    RouterModule,
   ],
-  providers: [],
+
+  //para cambiar de manera global el idioma
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es'}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,17 @@
+<p-panel header="Pipes numéricos" class="p-2">
+  <!-- <h1>Pipes Básicos</h1> -->
+  <p>Pipes usualmente usados en el common module</p>
+</p-panel>
+<div class="grid">
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas netas" subheader="Presente año"
+      >{{ ventasNetas | currency }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas netas" subheader="Presente año"
+      >{{ venta | percent }}
+    </p-card>
+  </div>
+</div>

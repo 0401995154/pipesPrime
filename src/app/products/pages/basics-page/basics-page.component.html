@@ -1,0 +1,39 @@
+<p-panel header="Pipes básicos" class="p-2">
+  <!-- <h1>Pipes Básicos</h1> -->
+  <p>Pipes usualmente usados en el common module</p>
+</p-panel>
+<div class="grid">
+  <div class="col-12 md:col-4">
+    <p-card header="uppercase"> {{ upperName | uppercase }}</p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="lowercase"> {{ lowerName | lowercase }} </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="titlecase"> {{ fullName | titlecase }} </p-card>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-card header="Fecha">
+      <ul>
+        <li>Fecha: fecha</li>
+        <li>Fecha</li>
+        <li>Fecha | date short</li>
+        <li>Idioma</li>
+      </ul>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-card header="titlecase">
+      <ul>
+        <li>{{ customDate }}</li>
+        <li>{{ customDate | date }}</li>
+        <li>{{ customDate | date : "short" }}</li>
+        <li>{{ customDate | date : "long" : "" : "es-EC" }}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>

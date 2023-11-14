@@ -1,0 +1,60 @@
+<p-panel header="Pipes no tan comunes" class="p-2">
+  <!-- <h1>Pipes Básicos</h1> -->
+  <p>Pipes usualmente usados en el common module</p>
+</p-panel>
+
+<div class="grid">
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="1 18 nselect" [toggleable]="true">
+      <p>
+        Hola {{ name }} es un gusto poder
+        {{ gender | i18nSelect : mapGender }} a nuestro evento
+      </p>
+
+      <p-button
+        (onClick)="cambiarPersona()"
+        label="Cambiar de persona"
+      ></p-button>
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="118nPlural" [toggleable]="true">
+      <p>Actualmente {{ personas.length | i18nPlural : mapaCliente }}</p>
+      <p-button label="Borrar cliente" (onClick)="borrarPersona()"></p-button>
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Slice pipe" [toggleable]="true">
+      <b>Original</b>
+
+      <pre>
+        {{ personas }}
+      </pre>
+
+      <b>Slice: 0:2</b>
+      <pre>{{ personas | slice : 0 : 4 }} </pre>
+    </p-fieldset>
+  </div>
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Json pipe" [toggleable]="true">
+      {{ personas | json }}
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Key value pipe" [toggleable]="true">
+      <p *ngFor="let item of objeto | keyvalue">
+        {{ item.key + " : " + item.value }}
+      </p>
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Async pipe" [toggleable]="true">
+      <p *ngIf="!(myObservable| async)">Resolviendo observable</p>
+      <p>{{ myObservable | async}}</p>
+    </p-fieldset>
+  </div>
+</div>
